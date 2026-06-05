@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ABH Crest Ltd | Strategy · Advisory · Projects</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Barlow',sans-serif;background:#F8F6F0;color:#111827;overflow-x:hidden}
+:root{
+  --gold:#B8962E;--gold-l:#D4AF5A;--gold-p:#F5EDD6;
+  --navy:#0E1C35;--slate:#1A2840;--mid:#4A5568;
+  --light:#F8F6F0;--white:#FFFFFF;
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'Barlow',sans-serif;--cond:'Barlow Condensed',sans-serif;
+}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0.7rem 3rem;background:rgba(14,28,53,0.97);border-bottom:1px solid rgba(184,150,46,0.25)}
+.nav-brand{display:flex;align-items:center;gap:0.8rem;text-decoration:none}
+.nav-brand img{height:54px;width:auto}
+.nav-brand-text{display:flex;flex-direction:column}
+.nav-brand-name{font-family:var(--cond);font-size:1.4rem;font-weight:700;letter-spacing:0.1em;color:#fff;line-height:1}
+.nav-brand-tag{font-family:var(--cond);font-size:0.65rem;letter-spacing:0.18em;color:var(--gold-l);margin-top:3px}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{font-family:var(--cond);font-size:0.78rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.85);text-decoration:none;transition:color 0.2s}
+.nav-links a:hover{color:var(--gold-l)}
+.nav-cta{font-family:var(--cond);font-size:0.75rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);border:1px solid var(--gold);padding:0.5rem 1.4rem;text-decoration:none;transition:all 0.2s}
+.nav-cta:hover{background:var(--gold);color:var(--navy)}
+
+/* HERO */
+#hero{min-height:100vh;background:linear-gradient(160deg,#2E5090 0%,#1E3A6E 45%,#122448 100%);display:flex;align-items:center;padding:8.5rem 3rem 5rem;position:relative;overflow:hidden}
+.hero-eyebrow{font-family:var(--cond);font-size:0.72rem;font-weight:600;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold-l);margin-bottom:1.5rem;display:flex;align-items:center;gap:0.8rem}
+.hero-eyebrow::before{content:'';width:36px;height:1px;background:var(--gold-l)}
+.hero-title{font-family:var(--serif);font-size:clamp(3rem,6vw,5.5rem);font-weight:300;line-height:1.08;color:#fff;margin-bottom:1.2rem;text-shadow:0 2px 20px rgba(0,0,0,0.3)}
+.hero-title em{font-style:italic;color:var(--gold-l)}
+.hero-tagline{font-family:var(--serif);font-size:1.2rem;font-style:italic;font-weight:300;color:rgba(255,255,255,0.85);margin-bottom:1.5rem}
+.hero-desc{font-size:0.97rem;line-height:1.9;color:rgba(255,255,255,0.88);max-width:520px;margin-bottom:2.5rem}
+.hero-actions{display:flex;gap:1.5rem;align-items:center;margin-bottom:3rem}
+.btn-primary{font-family:var(--cond);font-size:0.8rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;background:var(--gold);color:var(--navy);padding:1rem 2.4rem;text-decoration:none;display:inline-block;box-shadow:0 4px 20px rgba(184,150,46,0.3);transition:background 0.2s}
+.btn-primary:hover{background:var(--gold-l)}
+.btn-ghost{font-family:var(--cond);font-size:0.8rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.75);text-decoration:none;transition:color 0.2s}
+.btn-ghost:hover{color:var(--gold-l)}
+.hero-stats{display:flex;gap:2.5rem;flex-wrap:wrap;padding-top:2rem;border-top:1px solid rgba(184,150,46,0.25)}
+.stat-num{font-family:var(--serif);font-size:2.4rem;font-weight:300;color:var(--gold-l);line-height:1}
+.stat-label{font-family:var(--cond);font-size:0.62rem;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.75);margin-top:0.3rem}
+
+/* SECTIONS */
+section{padding:5rem 3rem}
+.sec-tag{font-family:var(--cond);font-size:0.68rem;font-weight:600;letter-spacing:0.26em;text-transform:uppercase;color:var(--gold);margin-bottom:0.8rem;display:flex;align-items:center;gap:0.8rem}
+.sec-tag::before{content:'';width:28px;height:1px;background:var(--gold)}
+.sec-title{font-family:var(--serif);font-size:clamp(1.9rem,3.5vw,3rem);font-weight:300;line-height:1.2;color:var(--navy);margin-bottom:1.5rem}
+.sec-title em{font-style:italic;color:var(--gold)}
+.sec-title.wht{color:#fff}
+hr.gold{border:none;border-top:1px solid rgba(184,150,46,0.2);margin-bottom:2rem}
+
+/* ABOUT */
+#about{background:#fff;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.about-text p{font-size:0.93rem;line-height:1.9;color:var(--mid);margin-bottom:1rem}
+.about-text strong{color:var(--navy)}
+.creds{margin-top:1.5rem;display:flex;flex-direction:column;gap:0.6rem}
+.cred{padding:0.9rem 1.1rem;border-left:2px solid var(--gold);background:var(--light)}
+.cred strong{display:block;font-size:0.88rem;color:var(--navy);margin-bottom:0.2rem}
+.cred p{font-size:0.83rem;color:var(--mid);line-height:1.5;margin:0}
+.about-shield{background:var(--navy);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:3.5rem 2rem;position:relative}
+.about-shield::before{content:'';position:absolute;inset:1rem;border:1px solid rgba(184,150,46,0.2)}
+.about-shield img{width:120px;height:auto;filter:drop-shadow(0 8px 24px rgba(184,150,46,0.2))}
+.about-shield-name{font-family:var(--cond);font-size:1rem;font-weight:700;letter-spacing:0.15em;color:#fff;margin-top:1rem}
+.about-shield-sub{font-family:var(--cond);font-size:0.62rem;letter-spacing:0.2em;color:var(--gold);margin-top:0.3rem}
+
+/* SERVICES */
+#services{background:var(--light)}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:2rem;background:rgba(0,0,0,0.07)}
+.svc{background:#fff;padding:2.2rem;position:relative;overflow:hidden;transition:background 0.3s}
+.svc::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform 0.3s}
+.svc:hover{background:var(--navy)}
+.svc:hover::after{transform:scaleX(1)}
+.svc-num{font-family:var(--serif);font-size:2.5rem;font-weight:300;color:rgba(184,150,46,0.15);line-height:1;margin-bottom:0.7rem;transition:color 0.3s}
+.svc:hover .svc-num{color:rgba(184,150,46,0.3)}
+.svc-title{font-family:var(--serif);font-size:1.1rem;font-weight:600;color:var(--navy);margin-bottom:0.6rem;transition:color 0.3s}
+.svc:hover .svc-title{color:var(--gold-l)}
+.svc-desc{font-size:0.85rem;line-height:1.8;color:var(--mid);transition:color 0.3s}
+.svc:hover .svc-desc{color:rgba(255,255,255,0.6)}
+
+/* PORTFOLIO */
+#portfolio{background:var(--navy)}
+.proj-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:2rem;background:rgba(255,255,255,0.04)}
+.proj{background:var(--slate);padding:2.5rem;transition:background 0.3s}
+.proj:hover{background:#223044}
+.proj.feat{grid-column:1/-1;background:linear-gradient(135deg,#152030,#0c1825);border:1px solid rgba(184,150,46,0.18)}
+.proj-badge{font-family:var(--cond);font-size:0.62rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;background:var(--gold);color:var(--navy);padding:0.25rem 0.65rem;display:inline-block;margin-bottom:1rem}
+.proj-badge.live{background:#27a97a}
+.proj-client{font-family:var(--cond);font-size:0.68rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem}
+.proj-title{font-family:var(--serif);font-size:1.35rem;font-weight:400;color:#fff;margin-bottom:0.7rem;line-height:1.3}
+.proj.feat .proj-title{font-size:1.8rem}
+.proj-desc{font-size:0.86rem;line-height:1.8;color:rgba(255,255,255,0.5);max-width:580px}
+.proj-value{margin-top:1.2rem;font-family:var(--serif);font-size:1.6rem;font-weight:300;color:var(--gold-l)}
+.proj-value small{font-family:var(--cond);font-size:0.62rem;letter-spacing:0.1em;color:rgba(255,255,255,0.3);display:block;margin-top:0.1rem}
+
+/* SOURCING */
+#sourcing{background:#fff;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.src-text p{font-size:0.93rem;line-height:1.9;color:var(--mid);margin-bottom:1rem}
+.src-panel{background:var(--light);border:1px solid rgba(0,0,0,0.06);padding:2.2rem}
+.src-panel-title{font-family:var(--serif);font-size:1rem;font-weight:600;color:var(--navy);margin-bottom:1rem;padding-bottom:0.7rem;border-bottom:1px solid rgba(0,0,0,0.08)}
+.src-item{display:flex;justify-content:space-between;align-items:center;padding:0.7rem 0;border-bottom:1px solid rgba(0,0,0,0.05);font-size:0.86rem}
+.src-item-name{color:var(--slate)}
+.src-tag{font-family:var(--cond);font-size:0.6rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);background:var(--gold-p);padding:0.2rem 0.5rem}
+
+/* CONTACT */
+#contact{background:var(--navy);text-align:center}
+#contact .sec-tag{justify-content:center}
+#contact .sec-tag::before{display:none}
+#contact .sec-title{color:#fff}
+.contact-sub{font-family:var(--serif);font-size:1.1rem;font-style:italic;color:rgba(255,255,255,0.4);margin-bottom:2.5rem}
+.contact-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;max-width:960px;margin:0 auto;background:rgba(255,255,255,0.04)}
+.c-item{background:var(--slate);padding:1.6rem 1.3rem}
+.c-label{font-family:var(--cond);font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem}
+.c-value{font-family:var(--serif);font-size:0.92rem;color:#fff;font-weight:300;line-height:1.6}
+.c-value a{color:#fff;text-decoration:none}
+.c-value a:hover{color:var(--gold-l)}
+
+/* FOOTER */
+footer{background:#050810;padding:1.4rem 3rem;display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(184,150,46,0.1)}
+.footer-left{display:flex;align-items:center;gap:0.7rem}
+.footer-left img{height:28px;width:auto}
+.footer-name{font-family:var(--cond);font-size:0.85rem;font-weight:700;letter-spacing:0.1em;color:var(--gold)}
+.footer-copy{font-family:var(--cond);font-size:0.66rem;letter-spacing:0.08em;color:rgba(255,255,255,0.2)}
+
+/* MOBILE */
+@media(max-width:900px){
+  nav{padding:0.7rem 1.2rem}
+  .nav-links{display:none}
+  section{padding:3.5rem 1.4rem}
+  #hero{padding:7rem 1.4rem 4rem}
+  #about,#sourcing{grid-template-columns:1fr;gap:2.5rem}
+  .svc-grid{grid-template-columns:1fr}
+  .proj-grid{grid-template-columns:1fr}
+  .proj.feat{grid-column:1}
+  .contact-grid{grid-template-columns:1fr 1fr}
+  footer{flex-direction:column;gap:0.5rem;text-align:center;padding:1.2rem}
+  .hero-stats{gap:1.5rem}
+}
+@media(max-width:500px){
+  .contact-grid{grid-template-columns:1fr}
+  .nav-brand-name{font-size:1.1rem}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#hero" class="nav-brand">
+    <img src="data:image/png;base64,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" alt="ABH Crest">
+    <div class="nav-brand-text">
+      <span class="nav-brand-name">ABH CREST LTD</span>
+      <span class="nav-brand-tag">STRATEGY &middot; ADVISORY &middot; PROJECTS</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#sourcing">Sourcing</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Engage Us</a>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div>
+    <div class="hero-eyebrow">Strategic Consulting &middot; Abuja, Nigeria</div>
+    <h1 class="hero-title">Where Strategy<br>Meets <em>Execution</em></h1>
+    <p class="hero-tagline">Bridging institutions, markets, and opportunity across Africa.</p>
+    <p class="hero-desc">ABH Crest Ltd is a multi-disciplinary consulting firm delivering high-stakes project management, ICT solutions, international trade facilitation, and institutional advisory to government agencies, corporate entities, and international organisations.</p>
+    <div class="hero-actions">
+      <a href="#services" class="btn-primary">Our Services</a>
+      <a href="#portfolio" class="btn-ghost">View Portfolio &rarr;</a>
+    </div>
+    <div class="hero-stats">
+      <div><div class="stat-num">&#8358;98M+</div><div class="stat-label">Contracts Delivered</div></div>
+      <div><div class="stat-num">5+</div><div class="stat-label">MDAs Served</div></div>
+      <div><div class="stat-num">Pan&#8209;Africa</div><div class="stat-label">Reach</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-text">
+    <div class="sec-tag">About the Firm</div>
+    <h2 class="sec-title">Institutional Depth.<br><em>Strategic Agility.</em></h2>
+    <hr class="gold">
+    <p>ABH Crest Ltd is an Abuja-based multi-disciplinary consulting firm operating at the intersection of public policy, private commerce, and institutional governance. We deliver strategic advisory, technology implementation, project management, and trade facilitation services to government agencies, parastatals, international organisations, and corporate entities across Nigeria and Africa.</p>
+    <p>Our principal brings a rare combination of <strong>International Relations expertise</strong> and <strong>Information &amp; Communications Technology</strong> &mdash; enabling the firm to navigate the most complex multi-stakeholder environments with both diplomatic sensitivity and technical precision.</p>
+    <p>From managing R&amp;A-sanctioned continental championships to delivering enterprise ICT systems for federal regulatory bodies, ABH Crest consistently operates at the highest institutional levels.</p>
+    <div class="creds">
+      <div class="cred"><strong>Government &amp; MDA Relations</strong><p>Deep engagement with federal agencies, parastatals, and inter-ministerial committees across Nigeria.</p></div>
+      <div class="cred"><strong>International Standards Delivery</strong><p>Projects executed under R&amp;A, NCAA procurement frameworks, and international event protocols.</p></div>
+      <div class="cred"><strong>Two Offices &middot; Abuja &amp; Kaduna</strong><p>No. 14 Dala Hills, Brains &amp; Hammers Estate, Abuja &middot; 40 Isa Kaita Road, Kaduna.</p></div>
+    </div>
+  </div>
+  <div class="about-shield">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAABYCAYAAABiQnDAAAABMmlDQ1BJQ0MgUHJvZmlsZQAAeJx9kD9Lw0AYxn+Wgv8H0dEhYxelKuigLlUsOkmNYHVK0zQVmhiSlCK4+QX8EIKzowi6CjoIgpvgRxAH1/qkQdIlvsd797vnHu7ufaEwhqJYBs+Pw1q1YhzVj43RT0Y0BmHZUUB+yPXznnrfFv7x5cV404lsrV/KZqjHdaUpnnNTbifcSPki4V4cxOKrhEOztiW+FpfcIW4MsR2Eif9FvOF1unb2b6Yc//BA645ynm1OiQjoYHGOwT4rmqvaeXSJxT05YtqiiJpOKiKTUA5fSgtHTNK/9InLD9h86Pf795m29wi3azBxl2mldZiZhKfnTMt6GlihNZCKykKrBd83MF2H2Vfdc/LXyJzajEFtVc40XNXmSNnVf20WRcuUWWL1Fx+iTfmvd1mpAAAXf0lEQVR42u18eXxV5bX2s9537zPlZCQTU4BACBAGGWUQmawzimDQKljHaqvitVhbh5JE1Pba64jVaweV2oqSqqhFC6JJKKPMQ8IUhkAgDJlOkjPv/a77xz7nJPbr9/u++7seai5Z+SfZJ/s9+332Gp+19ga6pEu6pEu6pEu6pEv+D2EGMYO6kOiS8y4EAL8ruittybP3dwMAxndTE8V38aLKiqZIAJScac7P6eb9PgAqt451AfiPUlQEwbxcooOGJc7MJyLi1GR1VVqquoaIOHFmfkcNJF6+XBYVFYkL2k47AkBE4KIiUVQUu6nunX+7z1P11QIPAHcsqBQVCRL0T9f4l/maf8kXE/Dmmz9wpJuO13r0ylo1+sqnPgIQKioqErn2XQP6F/T89/ETBswy2hpw4FDTippjbY/NPNX3IJWUKACy/ONHr/ec81xVXela8MhLL/qZLzATXrRoinbHHUsDh/ds9+X1s7136tBvdr/z3I33lpQUc0Oz57VE0Tirrb7ObGk4acJ/alb96ZMvU0kx/27xlT84vPv5XWMuyvyg4diu4MIXX/R/tWiKdgH6wAoFAO+9u+WlHRs3BpJsgfwDuyqTmIHPvkyfU/TYsvf3b9sgj1Tul78q+Wjp0vfDc5iBs0eqszLdqmD/zl3BFaWblgBAeWStCzJRBgjLnh6/9cCa+83r+6N39LNpORi96d2ruPqL+Tx/DEZGj1+eit67/7bA/PT1a3YB//pEW/tXfnl58RQJVBhtTU2bstL10QuK77j/h+GQLSMjXTtSuSVh4NA8pPbqh/l31C2489EBjQR2nq1rahowpL84uH3DRgBcXjxFAyqMCxLAqNQ3hvYdP1CJPgPG/8zjaYGmO5CTV4DdVR7ImhNIzx1xu8OhQ9cJ/YfkoflMNU6faj7wXbj27wSAeQW5vU83KNQd3RpyutMkG15lI58wRZJ0hxwIiqBpdybADIfg23/CdGmNtvzhA3OBakwtyOQLFsBzVRUMANt3nU4x205h2Mhc4Q7XSpsrUbocEnbdj8x+KQj6g1KzAUG/Hw1BD1fu3I9zbQl2gFBaWnrhViKVQ4oYAHnR/eURQ1LRI11o7pQshnDA5s6GLW0IvMEkCEcvBAw3HO4sTs9wyv79k5GUkPIyM1MpCi9IE6blhYWiLm2zBqJg75SQ42yTTe2raUFGTymG5LnxRdlBbNnZBJcNGDMyE2NG5+L4cQ81nW5UDidBJNocRMR7l0MWFhaicG6pIoD/1wLIDCotLRQZGWdp+vS1xtzSUhOlMAE4TFJjHcl9/NdeO8TVo7cbH76zEsdq2/DUkzNgt9mw5PVyEB3ErNtuhBEWtHHN9qDZ1Dg5GXx46NzS5mhRxXyjLC8+S+WoUCUlOC+5IcVbyzJ+fJamTp2qiEo6bkh/ZHbuuHGXjLg+b+iA2YMuGtyfNTu+WvkVKr7YiosnDcH1s0eh9OODMBXj1rnD8eXnlahYswUXXVyAy2fPRaJTw5G9e08d3rX104N7dqxYtOTghkagpf2GMZWXF8tz56p47txShThp53lLQgcAGQ/+2/jxfftnXdYrL++KnAG5+el9eqP26HGs+es6dWDPQTFydH9cff04HDnZisef+xqfb/BAEOGqCUl46qeXYHBeOtav2Ymv121Hdu8+5qVXXy1zB+ajtfEc6msPVtdV711Te+To+j17qzc/vezkoc6sgbRw4TxXtv/w6F45iZN79ek+tXvfnFF9B/RJk2mpOHeiGVs27uJdmytNTbCYOHW4GDkuHweONuCFN7bigy9Og6UbaakuCCnR2mZAKC9mTs3EA3eNwfCC3jhWdRSbKzZxq8er+g0ejqFjJ8rMHtleRwIlnNi1ceO5U8eaW84c+fr0ae/fz4aGbXmoZElrPLTwWwewrGiKNq2kwlhaPO0XV82a/FTG4IFA2EB1tQdbNmxTxw4eVbqAGHZRnhg1cRh0dyrW/P0gfvvHHSjbfA7Q3eiWmgipCTAThNSgaxIQEi2tQZDhxbhhyZg3dyQumzIUTgE+vHuH2rdtW6C11atl98kzcwaN8gwcOrC7K9GFM1Ub8PG7f3nk3l+ufT56bZ0iiAgpEtzZfXnpqx8Ea6tr9eQ0txg2skDM+N6NpLuTaNueOhQt2Y5PvziM2roQNJcbKd0yoGsaFBEUCxAIRATFAClCakoCSCRh59EwNhdtQkbSBkyd2I+uu+oi+b07p9pcwu89eXAP9uxYm71+xR/O9S0Y7R556dVnvf6wbpEOnSgKOx128+SxE1R3slm7/xd3y5bWMDbvOoO3nltPZRtqcbwuAAg73EkJyOieBDCBQTCYQSQs0yDA4vkEIAhKAQKMRLcdyckJME3g03UerPjqb8hKJX3cyJ4pMyYPwoRr7g5mpDjkR2/8qnH/to1bEtxJBABTAZR0FgCJQKZhIH9ILnbsOYPLb3oPBtsAqcPpTkBahhtCCDAzlGmBZTHNVjZHoqOPiVAuRGCygGQoCKEhJSURJJIRDJtYtdGDz9atBYX/an/zhXlNffrnt7lSsmYoI7C50+WBylQACMoIoLk5AEO50C07ESYTmAlKMTgKDBiChAUQAyIKHhFIEKQQliYyQIiADAIzwzRNCMXQJCElOQG6LRmnz+jc2BpqdKmQvbW5eTuUFJ3OhBUUiCyApCSQFFAKlj+jdk1jIhC1a5uuAb5ACGCC1CRMJaBUGElJTtikAKPD+R00FGTdFFMBgph1DXah9GTDZIU49vPiF0RIA1sJrbVFIkAICI5sntrzACIrWBimiZuv6I4bpnWHJgRCoSASE934+oBPvbbsuGgNAQ67dXui53wD0EiziZkgBRwgZSpmJYUzfvuMX+2mELO7CIjUATUiiuEYDRg2XeKN0qMQyo/u3YCFL1bht6WVuP36NLHs16NNmzCZlYIVbji2Iv+TnIwBk0DSnZScr9l0R+cDkAAojmDHACLVFLfvMFokG6YCKwYRwYQN9c1hnGlU2HOM8ebKVtz+6DaMGOuQV05Kp/rmMEwTCIQYSlkuIhxmGAoIGRx1nkxgTUjh0O327kRCRqNwpwFQsbJMjRXAZgQwS28Y3I6xUnj6RwORnqIjFLa0S5OAphFcdoGeWS7sPhqEcSaIvF529MqUKiNVBHKyRNBphzJZoVemDKYmwNs7U/frkszoTSMiCTZNZZrhTskHMnPER4n20BqNocQIGYysNIEf3pCMQX2cCIYUhKCI5SsoxQAThJQADDS3+DBigIayty/mRff0ZagAQmHGhKG6+uqdiXzvnO4cDgdZCCIiVkoppWmaU6n4ETMi3gtbAEZhay9FhSD4/GFMHpEEPdOO8QUuhA3T8o1s+U1N19DcFkJ+Lw1aog3r97Thk4om4Wtqc361ud5Re04Juw6sKGt0inDI/bcNZ13NbaRJAZBgG6DCpmlyKOwLdjoAVcRgBXEsEiMGJqAUw2kDLspPxLpVx3D1hFQkuGwwTMtXMhNaPF70zJB44s5cvPzGHuw44Ee3FBv8QRO6boNNty7fadcQCBjQhISUgGkym4YyhRAOVkqxqYzOZ8LKqh+Uspq3Ue3jiC76gwr5fZ1w2hnPvXMKwwYmon93DabBCIQUhgyQ+PQ/8rHl7ZHI75eA0i+9TCSglAkhCH6fD22tPni9frS2+lmAwcoEKxXzf8yQdocuNCnjtk8trs6BzZjGfeMjAfh9BiaPSMXxugD+vjcEM9yGSy9KwNZdXth14NjxFjz7x1q88v5x3DYzG+vevxTzF27HZxsbEQyG8OAtPXDD9F6Q0gBICyW42WYYKupASUo4EVaUkOAUQsYvlY4fgEpZwYIVmM1vcPsMgq4Dwwe48Mry02g+7EX51mbMnNwdL7xZBwmFFq+GjXuCSEtxoHzxCaQlS3rlZ/m8bt42CJi0ZlMLPviiFokJNthtwv76oDEgApSlhUTEDgaTIIZpxm/0KH4ZuhAAAaaKmq+Idi4QCiv0yNRx8WAnbpyShMvHpCAxwYGBvQF3mkTIJGiS4HIKJCdKMDnx8rIGXH3VYBqXLxEIEfYfNfDFNhOpSQoOLQgjpEBQVuRnBbAyFSsOhQ3JzNTpfKAggFU0/xMxH2j5rzAmDXOjoYWhCaBHhsSO/Q1IcRsYNSgJ/qAC2IBiIGww7LpAzVkTocZW5OW4oJjgsDFS3BqSEiRSEm0Aov7PKnAkKZsyFHNHdqJTkQncXlSx4vYhZyFgKhPfG5eIp9+swRdlbYBbhxRBzJmRgctGu+D3+UGU0F4CEiEUDCEUBnRdgE0/mBUM09JwM8ZSWLmnlcSbAqSElBJxTAPjqYFWLayUZVqIsC7BoIkeGTZ0S5LYezSE9JxE9Mh0QGgJKNvmwfSRNiS4dMv0o0QEM5wOCYcNOF7XCmYgEFKWqYIsEA0Tphk134ivVQwQx7VaEPHUQGYVIUg4wvkBbd4w5kxLBZhRV68giBE2GaZirN7UgIsLkjBqcDK83iCEFNAE4PWFMDwvCcIMYtchP5ITXTh1phVSEkxTwakDKSkCboe1DhGBYALKIEEMKeMXROIGoGEoCCEgiK1amABvwMSE4S5cd4kTyS7GrKmp8PpNGCbQM0Ni1GA3tu5rQlZyGAZrYGZ42sIIBvwovrsHlpc1odVrwG0LYP+JMOw2DcRh3Hx5CvZW12P6aAd6pQsEQoaVQlmOGMpQnc8HspRsKoGwYcIVuU02jXDoeABzHjsKIgmHXYOu2QBm+AKMZ5bW4+SRFiz79UAM6JsGh6YwOEfHMw8MBCsf7nn6IH5+10AcqPHi4IkgMpIdYEj87uNzeGVZHewOCc3mgoCCFEAwbEJxCLoevygcNwA9zUEfkQWg3a7HHHwwLCCkCwDBHyZIYbHJYAGPlzD7+n48KC+VurnDWPniYNg1PzZVNuCaJSfRvZsd98/OwO2LD0DXIoQtgJBph83lglIKpkkQgmDTTPiCfqt/orRgpwEw2ncwQkaLTiFIUnDbwtA1QDFH2GOOkKIEZqsDx8TQNcL+o610yy+aYJgEu41wttHAuSZg+sXd8J8/H4jn3zmEL7d6kdnNbfm7SH3NyozRaDYdSLADLUYIxEG0ttR7Ok1PpCAy8OipP1krxCiEw4qSXDoS3TqCIQUpqQMbGNl8pEIWgnDinAJBgyYFAiHGiIFJKPlxErKTCU+8WoWVmw2kpzhhRJgbjvU/rbVMQyHRJZDkZNSaIKX88DTWngKAgqpvfxjz2zfhyLzjsZrGulDQgAlNOHRCzwwn9h9rg0tKq1qgCCHP3E7RMGDXJYis6Ka5JE6cCeA/lrbibBODhR1pyTYYpgkppdXTY7baB0QAEYLBMHJ7OmAXIZgQ0tfmx4FKTx0AVA4p/dYB/NajcOHyUgUAOyrNmhZPmy8x0UUhn4cL+rsRDkYiY6RP0jG5iPE1FhcQawWEwgSPz4HERBdSEjWYpnXZHM31GLHyjZjhD4RRkJeCYEsTO1wJ8HqaW7buDtcChOJifPcBJAIzM22r9532tXqOZWcl4/TpJr50dBZgWJR9dNMxcj9CoFpEg3VMxaoQQJPWOe0VhYp1/KKsd3S9sBHG+BGpOH3qFGdkpsHX3Hi4GjjHrKJNvE6QB5bOFQC47mTT1pze6ThW06AuGZEIm0uzCFNW7dw+c6xyUB04QwjCNx4BiWgmRRrqYNWOBlskQtgwkewWGDvIjZO1Dapnr2yuOXZqKwCUF0+NC6UVFwCLK88SAFTvO1Hm0g3UtzBlJSmMGZYGv99or06YY5Bx7JCKAGIFBhUxU8UKihU4ynV3MF2lLJanzRfExcNSkOYMI2BIIsNHR6oOfxmvCBzHSsR69Orjspqvao7WBXP7ZctD+w7zPTf0g+EPW3Mv3N7f5I5qFjFLRACL/Y32pjlHTL2d6bZKxoA/gPnX5WL/rkru07+fPHqwxvtu6YlyACgurjA7DYAlJVDMRWJbHY7v23tk/fhx/bhsw3F1w6Wp6J2TgEAg0jzq0GqKucEIpMwdNbRDwICKaJ3FurCy6mlfwMCQ3ARcMTYJ27cfUsOG5fLBPVVlR4Ezy5cXynj4v7jWwsXF5QIAtu+sXaqznxKSknHiyGE8dmceAq1BSBEx1whk1NH/MWLBBN8AVMV6HogcY7bYHk+rFz+9czCO7N+HtO69EWxtoq/X734bACojLiUeEtchc2Ygm+B69d+nHBg/dWKP3/zmE15cPFuMvGU9DtQE4XLpiJJNFJnOis68AAQSEoIIJERsvI0s+4/9jxRAqzeMEXk2VLw5Bb8s/oO6599up9UfrKyZ9/iawcwIErXfm29b4v0eAm1lBYK5qaa8/LLBlx854Te9zWfFnGuH4rd/qYHDoXcgTTsAGJ2iiYGJGLHaEQci63efz4u/vDQZ+7ZshHCmmQNykuX7b32+aNOhtg3AFK2ioiZudExcJxOKS2Ayg1aU1v7nxx+tO3X3HZfIv3xSpUb1B356Rz94GvzQI6UdM4OVNSOjvmG+0UaUshpGEcCVMiEFcKa+DQvnD0BBTwOrVu1RhTdNlx+9t7rmpc/q/lBUBFFSEp/gcV4AJIBL50IcAFrXr6t97PSxwzRv3nT19K9W4rmFeZg4KgmNnqAFYiSXQyS6Wj8qNuXFqt3nsTKhSUKjJ4CJQxOw+CdD8cKv38fcW69Qh3btoE3r9z0KwFdQ9Q/jEJ0NQACYWwpzeSHk66tP/nHpO2vLJo3L0txJ3czlf6rAJ0vGoHuaRJsvBCmiHjkClLI0Mpb/RaMyW4ObXn8YqU4DH74yCZ8vXwVnUpo5cngv7c9Lv1z11tqm5YWFkHOtJ6HQqQG0ingwM2jnDtz3p7dX+x79yWVYXXacjx86iM9fGw2HZiIQNCGJY+WZNdrQXqVEgSVmBEMGVMiHj18dD09dNT5fXcULFsyit17/0LN5c929zKAhQ87Pc3Pn5WU2FRXggirIxWXN9W7C6awUY9ZNt0wznlj0ibzuil6YOb0v3l15AkEDcNg1y3GCYtP60XkjKYCQYSIU8GLFkvEYkctY9OT7WPzsncbO9Vu090q33/PXPa1/L6iCfOC18/Os3Hl7G1BpFbhoCrRXytu22YPeHuNHpY+bOHlk+MniFXLe7P64ZmoOPlxzBp42Ay6HbrVF21kuaJLgD4RBZhgrXhqDySMdWPjg23jokZvDMtSkv/zK6tf/WNH4y6IprD3wWfxN97yacKxCqYC5vJBlle/d+1/9zdqKHulKX/DgNcaDD69A33Qf1v5hFPpm62j0+KFLRCZcFTQJeFr9cNtNrHpjLCaN0PHAfW/i1juuNfpkS/2lFz4r+/2aMw8sL1SypOL8gXfeAQTAlUPA5eXTzG3Hs+c8/+vP9w3PT9Aeeuha40cPfgQtfA6b3xmHKSOS0dDghRQKmiTUN/gwuLeGTX+egIHZAdx7x+9xyw+uNsaPztaee+aDyq8P953DTFw5pJ1W/F8t0dc7XTt6dE7xvL6HW3ffzztX/jA8a1wKV/x5JvOJJ/i+H85mpI9ldLuYb7x5JgeOPc57V93KN01K4Y0f3RMOVj/GxfP7VV9eUNC745oXjBQWWv535rjh/RZ9v091w5a7+Mj6BeG5l2Ty209PYq5/nF96dh4/9eRNzI2L+JPXLuMbJ6ZxZfnD4baqn3DJbf2OfG94Tr+Oa11wEt34tZMm5fy8sGfliYr53HLgyfDdV/Xh4jsHMh9/mLnuEX7xJxfxbTO687mqReH6rT/iJ27qve+KESP6XtDg/SOIhZdcmbFwVs/1uz+cxXx6cbjkvrF8z9VZ/NCcnvyz24Yx1z0T3v/ZzfzwddnrJwyfkNkF3j8DsfB554+v7L589WvTmBsWG8uev1699fQVihufNdb+fgbff0Vmaa9eDzu7wPu/BBaLgdFw14wez/xp0Sjmoz9XXPO4+nPxKP7BpZnPAhqILsCA8f+d4wBkaZbA9yfm3PrKQ4MDLy8YFLxxfOatgIgC1/VW3/+nNk6xGv63TBs0+tYZBWMBih3rkv+mX+zyd/9Dv9jl77qkS7qkS7qkS7qkS7rkuyj/Bd4CwaPPkiswAAAAAElFTkSuQmCC" alt="ABH Crest Shield">
+    <div class="about-shield-name">ABH CREST LTD</div>
+    <div class="about-shield-sub">STRATEGY &middot; ADVISORY &middot; PROJECTS</div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="sec-tag">What We Do</div>
+  <h2 class="sec-title">Our <em>Services</em></h2>
+  <hr class="gold">
+  <div class="svc-grid">
+    <div class="svc"><div class="svc-num">01</div><div class="svc-title">Project Management &amp; Event Consulting</div><div class="svc-desc">End-to-end management of large-scale institutional projects and international events. We handle Secretariat functions, LOC governance, inter-agency coordination, stakeholder engagement, and post-event evaluation. Our management of AACT 2026 demonstrates this at continental level.</div></div>
+    <div class="svc"><div class="svc-num">02</div><div class="svc-title">ICT Solutions &amp; Systems Implementation</div><div class="svc-desc">Customisation and deployment of enterprise software systems for government and corporate clients &mdash; including legal and case management platforms, workflow automation, and digital infrastructure. Delivered under formal procurement and parastatal tender frameworks.</div></div>
+    <div class="svc"><div class="svc-num">03</div><div class="svc-title">Strategic &amp; Institutional Advisory</div><div class="svc-desc">High-level advisory to organisations navigating complex policy environments, inter-agency dynamics, and institutional reform. We develop strategic frameworks, position papers, white papers, and provide executive-level counsel on sensitive institutional matters.</div></div>
+    <div class="svc"><div class="svc-num">04</div><div class="svc-title">Sourcing &amp; Manufacturer Representation</div><div class="svc-desc">Acting as authorised sourcing agents and manufacturers&rsquo; representatives for a broad range of goods &mdash; technology hardware, industrial equipment, consumer products, and specialised institutional items from China, UAE, Europe, and the Americas.</div></div>
+    <div class="svc"><div class="svc-num">05</div><div class="svc-title">Contract Drafting &amp; General Legal Services</div><div class="svc-desc">Preparation and review of commercial contracts, MoUs, service agreements, and multi-party institutional frameworks. Drawing on deep familiarity with Nigerian public procurement law and international commercial terms.</div></div>
+    <div class="svc"><div class="svc-num">06</div><div class="svc-title">International Trade &amp; Investment Facilitation</div><div class="svc-desc">Supporting businesses and institutions in cross-border commerce &mdash; market entry strategy, trade mission support, bilateral engagement facilitation, and commercial diplomacy across Africa and international business communities.</div></div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio">
+  <div class="sec-tag">Track Record</div>
+  <h2 class="sec-title wht">Selected <em style="color:var(--gold-l)">Engagements</em></h2>
+  <hr class="gold">
+  <div class="proj-grid">
+    <div class="proj feat">
+      <span class="proj-badge live">Active &middot; 2025&ndash;2026</span>
+      <div class="proj-client">Lead Consultant &amp; Head of Secretariat</div>
+      <div class="proj-title">All Africa Challenge Trophy (AACT) 2026 &mdash; Abuja</div>
+      <p class="proj-desc">Serving as the strategic and operational engine behind the 2026 All Africa Challenge Trophy &mdash; an R&amp;A-sanctioned continental women&rsquo;s golf championship at IBB International Golf Course, Abuja (November 2&ndash;7, 2026). Responsibilities span LOC governance, inter-agency coordination with the Interior Ministry and federal MDAs, a &#8358;547M sponsorship architecture across 10 commercial tiers, the Sports-to-Business Investment Pavilion, and international liaison with the R&amp;A and AACT Africa.</p>
+      <div class="proj-value">&#8358;547M<small>Programme Framework Value</small></div>
+    </div>
+    <div class="proj">
+      <span class="proj-badge">Completed &middot; 2025</span>
+      <div class="proj-client">Nigeria Civil Aviation Authority (NCAA)</div>
+      <div class="proj-title">Legal Case Management System (LCMS)</div>
+      <p class="proj-desc">Engaged by the NCAA Parastatal Tenders Board for the customisation and implementation of a Legal Case Management System for the Directorate of Legal Services at NCAA Corporate HQ, Abuja.</p>
+      <div class="proj-value">&#8358;98.7M<small>Contract Value (VAT Inclusive)</small></div>
+    </div>
+    <div class="proj">
+      <span class="proj-badge">Institutional</span>
+      <div class="proj-client">Government &amp; MDA Advisory</div>
+      <div class="proj-title">Inter-Agency &amp; Institutional Engagements</div>
+      <p class="proj-desc">Ongoing advisory and facilitation across federal ministries, departments, and agencies &mdash; inter-ministerial committee participation, MoU development, and institutional capacity work across Abuja.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SOURCING -->
+<section id="sourcing">
+  <div class="src-text">
+    <div class="sec-tag">Sourcing &amp; Trade</div>
+    <h2 class="sec-title">Global Sourcing.<br><em>Local Execution.</em></h2>
+    <hr class="gold">
+    <p>ABH Crest operates as a trusted sourcing intermediary and manufacturers&rsquo; representative, connecting Nigerian and African buyers with verified international suppliers. We handle the full sourcing cycle &mdash; from supplier identification and product verification to logistics coordination and delivery oversight.</p>
+    <p>Our network spans manufacturers and distributors across China, the UAE, Europe, and the Americas, with particular strength in technology equipment, industrial supplies, and specialised institutional procurement.</p>
+    <p>For manufacturers and exporters seeking representation in Nigeria and West Africa, we offer market access services, regulatory navigation, and sustained commercial relationship management.</p>
+  </div>
+  <div class="src-panel">
+    <div class="src-panel-title">Sourcing Capabilities</div>
+    <div class="src-item"><span class="src-item-name">Technology &amp; ICT Equipment</span><span class="src-tag">Active</span></div>
+    <div class="src-item"><span class="src-item-name">Industrial &amp; Institutional Supplies</span><span class="src-tag">Active</span></div>
+    <div class="src-item"><span class="src-item-name">Sports &amp; Events Equipment</span><span class="src-tag">Active</span></div>
+    <div class="src-item"><span class="src-item-name">Consumer &amp; FMCG Products</span><span class="src-tag">Active</span></div>
+    <div class="src-item"><span class="src-item-name">Manufacturer Representation (West Africa)</span><span class="src-tag">Active</span></div>
+    <div class="src-item"><span class="src-item-name">China &middot; UAE &middot; Europe &middot; Americas</span><span class="src-tag">Markets</span></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="sec-tag">Get In Touch</div>
+  <h2 class="sec-title">Let&rsquo;s Work Together</h2>
+  <p class="contact-sub">For project enquiries, sourcing requests, or strategic partnerships.</p>
+  <div class="contact-grid">
+    <div class="c-item"><div class="c-label">Abuja Office</div><div class="c-value">No. 14 Dala Hills<br>Brains &amp; Hammers Estate<br>Abuja, FCT</div></div>
+    <div class="c-item"><div class="c-label">Kaduna Office</div><div class="c-value">40 Isa Kaita Road<br>Kaduna</div></div>
+    <div class="c-item"><div class="c-label">Telephone</div><div class="c-value"><a href="tel:+2348035548499">+234 803 554 8499</a><br><a href="tel:+2348122228998">+234 812 222 8998</a></div></div>
+    <div class="c-item"><div class="c-label">Email &amp; Web</div><div class="c-value"><a href="mailto:info@abhcrest.com">info@abhcrest.com</a><br><a href="https://www.abhcrest.com">www.abhcrest.com</a></div></div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-left">
+    <img src="data:image/png;base64,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" alt="ABH Crest">
+    <span class="footer-name">ABH CREST LTD</span>
+  </div>
+  <div class="footer-copy">&copy; 2026 ABH Crest Ltd. All rights reserved.</div>
+  <div class="footer-copy">Abuja &middot; Kaduna &middot; Nigeria</div>
+</footer>
+
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', function(e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if(target) {
+      const navH = document.querySelector('nav').offsetHeight;
+      window.scrollTo({top: target.getBoundingClientRect().top + window.pageYOffset - navH - 10, behavior: 'smooth'});
+    }
+  });
+});
+window.addEventListener('load', function() {
+  if(window.location.hash) {
+    setTimeout(function() {
+      const target = document.querySelector(window.location.hash);
+      if(target) {
+        const navH = document.querySelector('nav').offsetHeight;
+        window.scrollTo({top: target.getBoundingClientRect().top + window.pageYOffset - navH - 10, behavior: 'smooth'});
+      }
+    }, 400);
+  }
+});
+</script>
+</body>
+</html>
